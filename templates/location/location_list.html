@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Locations{% endblock %}
+
+{% block content %}
+  <h1 class="title is-1">Locations</h1>
+  <div class="box">
+    <ul>
+      {% for location in locations %}
+        <li>{{ location.name }} - {{ location.address }} - {{ location.latitude }}, {{ location.longitude }}</li>
+      {% empty %}
+        <li>No locations found.</li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endblock %}

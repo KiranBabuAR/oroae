@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Add Location{% endblock %}
+
+{% block content %}
+  <h1 class="title">Add Location</h1>
+  <form method="post">
+    {% csrf_token %}
+    <div class="field">
+      <label class="label">Name</label>
+      {{ form.name }}
+    </div>
+    <div class="field">
+      <label class="label">Address</label>
+      {{ form.address }}
+    </div>
+    <div class="field">
+      <label class="label">Latitude</label>
+      {{ form.latitude }}
+    </div>
+    <div class="field">
+      <label class="label">Longitude</label>
+      {{ form.longitude }}
+    </div>
+    <div class="field">
+      <button class="button is-primary" type="submit">Add</button>
+    </div>
+  </form>
+{% endblock %}

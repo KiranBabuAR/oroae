@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Driver Page{% endblock %}
+
+{% block content %}
+  <section class="section">
+    <div class="container">
+      <h1 class="title">Driver Page</h1>
+      <table class="table is-bordered is-striped is-hoverable">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Beds Available</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for hospital in hospitals %}
+          <tr>
+            <td>{{ hospital.name }}</td>
+            <td>{{ hospital.beds_available }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </section>
+{% endblock %}

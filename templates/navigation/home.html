@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Navigate to Destination{% endblock %}
+
+{% block content %}
+  <section class="section">
+    <div class="container">
+      <h1 class="title">Navigate to Destination</h1>
+      <p class="subtitle">Click the button below to navigate to your destination.</p>
+      <form method="post" action="{% url 'navigate_to_destination' %}">
+        {% csrf_token %}
+        <button type="submit" class="button is-primary">Navigate</button>
+      </form>
+    </div>
+  </section>
+{% endblock %}

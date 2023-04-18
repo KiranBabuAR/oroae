@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}List of Hospitals{% endblock %}
+
+{% block content %}
+  <section class="section">
+    <div class="container">
+      <h1 class="title">List of Hospitals</h1>
+      <ul class="menu-list">
+        {% for hospital in hospitals %}
+        <li>
+          <a class="has-text-dark" href="{% url 'update_hospital' hospital.pk %}">
+            {{ hospital.name }} - {{ hospital.beds_available }} Beds Available
+          </a>
+        </li>
+        {% empty %}
+        <li>No hospitals yet.</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+{% endblock %}
